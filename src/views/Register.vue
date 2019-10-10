@@ -60,7 +60,7 @@
                 </v-card-text>
                 <v-divider></v-divider>
                 <v-card-actions>
-                    <v-btn color = "info">Atrás</v-btn>  
+                    <v-btn color = "info" :to="'Home'">Atrás</v-btn>  
                     <v-spacer></v-spacer>
                     <v-btn color = "success" @click="validAll">Registrarse</v-btn>
                 </v-card-actions>

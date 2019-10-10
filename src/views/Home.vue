@@ -4,6 +4,7 @@
     <v-content>
       <h1>Hola mundo</h1>
 
+
     </v-content>
     <Footer/>
   </v-app>

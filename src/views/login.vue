@@ -9,8 +9,10 @@
         <v-card-text>
           <v-form>
             <v-text-field 
-              label="Username" 
+              label="Email" 
               prepend-icon ="mdi-account-circle"
+              v-model.trim="emailInpt"
+              :error = "!enableEmail"
             />
             <v-text-field 
               :type= " showPassword ? 'text' : 'password'" 
@@ -18,14 +20,16 @@
               prepend-icon = "mdi-lock"
               :append-icon = "showPassword ? 'mdi-eye' : 'mdi-eye-off'"
               @click:append="showPassword= !showPassword"
+              v-model.trim="passwordInpt"
+              :error ="!enablePassword"
               />
           </v-form>
         </v-card-text>
         <v-divider></v-divider>
         <v-card-actions>
-          <v-btn color = "success">Login</v-btn>
+          <v-btn color = "success" @click="isValid">Login</v-btn>
           <v-spacer></v-spacer>
-          <v-btn color = "info">Register</v-btn>  
+          <v-btn color = "info" :to="'Register'">Register</v-btn>  
         </v-card-actions>
       </v-card>
     </v-content>
@@ -45,11 +49,35 @@ export default {
   },
   data: () =>({
       showPassword: false,
+      emailInpt: '',
+      passwordInp: '',
+      enablePassword: true,
+      enableEmail: true,
       links: [
           'Home',
           'Login',
           'Register'
       ]
-  })
+  }),
+  methods:{
+    isValid(){
+      var op = this.emailInpt.match(/\S+@\S+\.\S+/) != null && this.passwordInpt.length > 2
+      if(op){
+        var text = JSON.stringify({
+          "Email":this.emailInpt,
+          "Password":this.passwordInpt
+          })
+          console.log(text)
+          this.enableEmail = true
+          this.enablePassword = true
+      }
+      else{
+        alert("Complete los campos")
+        this.enableEmail = this.emailInpt.match(/\S+@\S+\.\S+/) != null
+        this.enablePassword = this.passwordInpt.length > 2
+      
+      } 
+    }
+  }
 }
 </script>

@@ -11,6 +11,7 @@
           text
           rounded
           class="my-2"
+          :to="link"
         >
           {{ link }}
         </v-btn>
@@ -18,7 +19,7 @@
           class="primary lighten-2 py-4 text-center white--text"
           cols="12"
         >
-          {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+          {{ new Date().getFullYear() }} — <strong>Fazd</strong>
         </v-col>
       </v-row>
     </v-footer>
