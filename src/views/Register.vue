@@ -140,7 +140,7 @@ export default {
           this.validPassword2()
           if(this.enableName && this.enableLastName && this.enablePhone && 
           this.enableEmail && this.enablePassword && this.enablePassword2){
-              var text = {
+              /*var text = {
                   "Name" : this.nameInpt,
                   "LastName" : this.lastNameInpt,
                   "Phone" : this.PhoneInpt,
@@ -148,7 +148,7 @@ export default {
                   "Password" : this.passwordInpt
               }
               var obj = JSON.stringify(text);
-              
+              */
           }
           else{
               alert("Complete los campos")

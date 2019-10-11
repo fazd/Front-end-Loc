@@ -7,7 +7,6 @@
         :key ="link"
         text
         rounded
-        @click="move(key)"
         :to="link"
         >{{link}}
         </v-btn>

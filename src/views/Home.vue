@@ -1,13 +1,16 @@
 <template>
-  <v-app>
-    <Navbar/>
-    <v-content>
-      <h1>Hola mundo</h1>
+  <div id="home">
+    <v-app>
+      <Navbar/>
+      <v-content>
+        <h1>Hola mundo</h1>
 
 
-    </v-content>
-    <Footer/>
-  </v-app>
+      </v-content>
+      <Footer/>
+    </v-app>
+
+  </div>
 </template>
 
 <script>

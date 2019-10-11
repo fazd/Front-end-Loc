@@ -27,9 +27,9 @@
         </v-card-text>
         <v-divider></v-divider>
         <v-card-actions>
-          <v-btn color = "success" @click="isValid">Login</v-btn>
-          <v-spacer></v-spacer>
           <v-btn color = "info" :to="'Register'">Register</v-btn>  
+          <v-spacer></v-spacer>
+          <v-btn color = "success" @click="isValid">Login</v-btn>
         </v-card-actions>
       </v-card>
     </v-content>
@@ -63,13 +63,15 @@ export default {
     isValid(){
       var op = this.emailInpt.match(/\S+@\S+\.\S+/) != null && this.passwordInpt.length > 2
       if(op){
-        var text = JSON.stringify({
+        /*var text = JSON.stringify({
           "Email":this.emailInpt,
           "Password":this.passwordInpt
           })
           console.log(text)
+          */
           this.enableEmail = true
           this.enablePassword = true
+          
       }
       else{
         alert("Complete los campos")
